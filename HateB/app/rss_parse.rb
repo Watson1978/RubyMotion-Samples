@@ -8,7 +8,7 @@ class RSS
     # for GCD trick
     @url = url
     @self = self
-    Dispatch::Queue.main.async do
+    Dispatch::Queue.concurrent.async do
       xml = NSXMLParser.alloc.initWithContentsOfURL(@url)
       xml.delegate = @self
       xml.parse
@@ -21,7 +21,9 @@ class RSS
 
   def parserDidEndDocument(parser)
     if @delegate.respond_to?("parserDidEndDocument")
-      @delegate.send("parserDidEndDocument")
+      Dispatch::Queue.main.sync do
+        @delegate.send("parserDidEndDocument")
+      end
     end
   end
 
@@ -39,7 +41,9 @@ class RSS
              qualifiedName: qName)
     @item[elementName] = @string
     if elementName == "item"
-      @delegate.send(@callback, @item)
+      Dispatch::Queue.main.sync do
+        @delegate.send(@callback, @item)
+      end
       @item = {}
     end
   end
