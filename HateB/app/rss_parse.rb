@@ -1,10 +1,10 @@
 class RSS
-  def parse(url,
-            delegate: delegate,
-            selector: callback)
+  def initialize(delegate, callback)
     @delegate = delegate
     @callback = callback
+  end
 
+  def parse(url)
     # for GCD trick
     @url = url
     @self = self
@@ -12,6 +12,7 @@ class RSS
       xml = NSXMLParser.alloc.initWithContentsOfURL(@url)
       xml.delegate = @self
       xml.parse
+      @url = @self = nil
     end
   end
 
