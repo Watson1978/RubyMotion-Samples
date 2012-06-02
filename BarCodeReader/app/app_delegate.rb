@@ -10,6 +10,7 @@ class BarCodeReaderController < UIViewController
 
   def actionTapped
     @reader = ZBarReaderController.new
+    @reader.sourceType = UIImagePickerControllerSourceTypePhotoLibrary
     @reader.readerDelegate = self
     @reader.scanner.setSymbology(ZBAR_I25,
                                  config: ZBAR_CFG_ENABLE,
@@ -21,8 +22,8 @@ class BarCodeReaderController < UIViewController
   def imagePickerController(reader,
                             didFinishPickingMediaWithInfo: info)
     info.objectForKey(ZBarReaderControllerResults).each do |item|
-      p item.typeName
-      p item.data
+      NSLog item.typeName.to_s
+      NSLog item.data.to_s
     end
 
     @reader.dismissModalViewControllerAnimated(true)
