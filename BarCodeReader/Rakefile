@@ -1,0 +1,16 @@
+$:.unshift("/Library/RubyMotion/lib")
+require 'motion/project'
+
+Motion::Project::App.setup do |app|
+  # Use `rake config' to see complete project settings.
+  app.name = 'BarCodeReader'
+  app.vendor_project('vendor/ZBarSDK', :static,
+      :headers_dir => 'Headers/ZBarSDK')
+
+  # ZBarSDK need following frameworks and libs
+  app.frameworks << 'AVFoundation'
+  app.frameworks << 'CoreMedia'
+  app.frameworks << 'CoreVideo'
+  app.frameworks << 'QuartzCore'
+  app.libs << '/usr/lib/libiconv.dylib'
+end

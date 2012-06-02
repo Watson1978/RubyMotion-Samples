@@ -1,0 +1,1445 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<opaque type='^{zbar_decoder_s=}' name='zbar_decoder_t'/>
+<opaque type='^{zbar_image_scanner_s=}' name='zbar_image_scanner_t'/>
+<opaque type='^{zbar_image_s=}' name='zbar_image_t'/>
+<opaque type='^{zbar_processor_s=}' name='zbar_processor_t'/>
+<opaque type='^{zbar_scanner_s=}' name='zbar_scanner_t'/>
+<opaque type='^{zbar_symbol_set_s=}' name='zbar_symbol_set_t'/>
+<opaque type='^{zbar_symbol_s=}' name='zbar_symbol_t'/>
+<opaque type='^{zbar_video_s=}' name='zbar_video_t'/>
+<opaque type='^{zbar_window_s=}' name='zbar_window_t'/>
+<constant declared_type='NSString*' type='@' name='ZBarReaderControllerResults' const='true'/>
+<constant declared_type='int' type='i' name='zbar'/>
+<enum value='1792' name='ZBAR_ADDON'/>
+<enum value='512' name='ZBAR_ADDON2'/>
+<enum value='1280' name='ZBAR_ADDON5'/>
+<enum value='1' name='ZBAR_CFG_ADD_CHECK'/>
+<enum value='3' name='ZBAR_CFG_ASCII'/>
+<enum value='2' name='ZBAR_CFG_EMIT_CHECK'/>
+<enum value='0' name='ZBAR_CFG_ENABLE'/>
+<enum value='33' name='ZBAR_CFG_MAX_LEN'/>
+<enum value='32' name='ZBAR_CFG_MIN_LEN'/>
+<enum value='4' name='ZBAR_CFG_NUM'/>
+<enum value='128' name='ZBAR_CFG_POSITION'/>
+<enum value='64' name='ZBAR_CFG_UNCERTAINTY'/>
+<enum value='256' name='ZBAR_CFG_X_DENSITY'/>
+<enum value='257' name='ZBAR_CFG_Y_DENSITY'/>
+<enum value='128' name='ZBAR_CODE128'/>
+<enum value='39' name='ZBAR_CODE39'/>
+<enum value='93' name='ZBAR_CODE93'/>
+<enum value='15' name='ZBAR_COMPOSITE'/>
+<enum value='34' name='ZBAR_DATABAR'/>
+<enum value='35' name='ZBAR_DATABAR_EXP'/>
+<enum value='13' name='ZBAR_EAN13'/>
+<enum value='2' name='ZBAR_EAN2'/>
+<enum value='5' name='ZBAR_EAN5'/>
+<enum value='8' name='ZBAR_EAN8'/>
+<enum value='7' name='ZBAR_ERR_BUSY'/>
+<enum value='10' name='ZBAR_ERR_CLOSED'/>
+<enum value='2' name='ZBAR_ERR_INTERNAL'/>
+<enum value='4' name='ZBAR_ERR_INVALID'/>
+<enum value='6' name='ZBAR_ERR_LOCKING'/>
+<enum value='1' name='ZBAR_ERR_NOMEM'/>
+<enum value='12' name='ZBAR_ERR_NUM'/>
+<enum value='5' name='ZBAR_ERR_SYSTEM'/>
+<enum value='3' name='ZBAR_ERR_UNSUPPORTED'/>
+<enum value='11' name='ZBAR_ERR_WINAPI'/>
+<enum value='8' name='ZBAR_ERR_XDISPLAY'/>
+<enum value='9' name='ZBAR_ERR_XPROTO'/>
+<enum value='25' name='ZBAR_I25'/>
+<enum value='10' name='ZBAR_ISBN10'/>
+<enum value='14' name='ZBAR_ISBN13'/>
+<enum value='1' name='ZBAR_MOD_AIM'/>
+<enum value='0' name='ZBAR_MOD_GS1'/>
+<enum value='2' name='ZBAR_MOD_NUM'/>
+<enum value='0' name='ZBAR_NONE'/>
+<enum value='0' name='ZBAR_OK'/>
+<enum value='2' name='ZBAR_ORIENT_DOWN'/>
+<enum value='3' name='ZBAR_ORIENT_LEFT'/>
+<enum value='1' name='ZBAR_ORIENT_RIGHT'/>
+<enum value='-1' name='ZBAR_ORIENT_UNKNOWN'/>
+<enum value='0' name='ZBAR_ORIENT_UP'/>
+<enum value='1' name='ZBAR_PARTIAL'/>
+<enum value='57' name='ZBAR_PDF417'/>
+<enum value='64' name='ZBAR_QRCODE'/>
+<enum value='255' name='ZBAR_SYMBOL'/>
+<enum value='12' name='ZBAR_UPCA'/>
+<enum value='9' name='ZBAR_UPCE'/>
+<enum value='30' name='ZBarOrientationMaskAll'/>
+<enum value='0' name='ZBarReaderControllerCameraModeDefault'/>
+<enum value='1' name='ZBarReaderControllerCameraModeSampling'/>
+<enum value='2' name='ZBarReaderControllerCameraModeSequence'/>
+<function name='zbar_decode_width'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder'/>
+<arg declared_type='unsigned int' type='I' name='width'/>
+<retval declared_type='zbar_symbol_type_t' type='i'/>
+</function>
+<function name='zbar_decoder_create'>
+<retval declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}'/>
+</function>
+<function name='zbar_decoder_destroy'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_decoder_get_color'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder' const='true'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_decoder_get_configs'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder' const='true'/>
+<arg declared_type='zbar_symbol_type_t' type='i' name='symbology'/>
+<retval declared_type='unsigned int' type='I'/>
+</function>
+<function name='zbar_decoder_get_data'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder' const='true'/>
+<retval declared_type='char*' type='*' const='true'/>
+</function>
+<function name='zbar_decoder_get_data_length'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder' const='true'/>
+<retval declared_type='unsigned int' type='I'/>
+</function>
+<function name='zbar_decoder_get_direction'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder' const='true'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_decoder_get_modifiers'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder' const='true'/>
+<retval declared_type='unsigned int' type='I'/>
+</function>
+<function name='zbar_decoder_get_type'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder' const='true'/>
+<retval declared_type='zbar_symbol_type_t' type='i'/>
+</function>
+<function name='zbar_decoder_get_userdata'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder' const='true'/>
+<retval declared_type='void*' type='^v'/>
+</function>
+<function name='zbar_decoder_new_scan'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function inline='true' name='zbar_decoder_parse_config'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder'/>
+<arg declared_type='char*' type='*' name='config_string' const='true'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_decoder_reset'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_decoder_set_config'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder'/>
+<arg declared_type='zbar_symbol_type_t' type='i' name='symbology'/>
+<arg declared_type='zbar_config_t' type='i' name='config'/>
+<arg declared_type='int' type='i' name='value'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_decoder_set_handler'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder'/>
+<arg declared_type='zbar_decoder_handler_t*' type='^?' name='handler' function_pointer='true'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='zbar_decoder_handler_t*' type='^?' function_pointer='true'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}'/>
+<retval declared_type='void' type='v'/>
+</retval>
+</function>
+<function name='zbar_decoder_set_userdata'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder'/>
+<arg declared_type='void*' type='^v' name='userdata'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function inline='true' name='zbar_fourcc_parse'>
+<arg declared_type='char*' type='*' name='format' const='true'/>
+<retval declared_type='unsigned long' type='L'/>
+</function>
+<function name='zbar_get_addon_name'>
+<arg declared_type='zbar_symbol_type_t' type='i' name='sym'/>
+<retval declared_type='char*' type='*' const='true'/>
+</function>
+<function name='zbar_get_config_name'>
+<arg declared_type='zbar_config_t' type='i' name='config'/>
+<retval declared_type='char*' type='*' const='true'/>
+</function>
+<function name='zbar_get_modifier_name'>
+<arg declared_type='zbar_modifier_t' type='i' name='modifier'/>
+<retval declared_type='char*' type='*' const='true'/>
+</function>
+<function name='zbar_get_orientation_name'>
+<arg declared_type='zbar_orientation_t' type='i' name='orientation'/>
+<retval declared_type='char*' type='*' const='true'/>
+</function>
+<function name='zbar_get_symbol_name'>
+<arg declared_type='zbar_symbol_type_t' type='i' name='sym'/>
+<retval declared_type='char*' type='*' const='true'/>
+</function>
+<function name='zbar_image_convert'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image' const='true'/>
+<arg declared_type='unsigned long' type='L' name='format'/>
+<retval declared_type='zbar_image_t*' type='^{zbar_image_s=}'/>
+</function>
+<function name='zbar_image_convert_resize'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image' const='true'/>
+<arg declared_type='unsigned long' type='L' name='format'/>
+<arg declared_type='unsigned int' type='I' name='width'/>
+<arg declared_type='unsigned int' type='I' name='height'/>
+<retval declared_type='zbar_image_t*' type='^{zbar_image_s=}'/>
+</function>
+<function name='zbar_image_create'>
+<retval declared_type='zbar_image_t*' type='^{zbar_image_s=}'/>
+</function>
+<function name='zbar_image_destroy'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_image_first_symbol'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image' const='true'/>
+<retval declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' const='true'/>
+</function>
+<function name='zbar_image_free_data'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_image_get_crop'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image' const='true'/>
+<arg declared_type='unsigned int*' type='^I' name='x'/>
+<arg declared_type='unsigned int*' type='^I' name='y'/>
+<arg declared_type='unsigned int*' type='^I' name='width'/>
+<arg declared_type='unsigned int*' type='^I' name='height'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_image_get_data'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image' const='true'/>
+<retval declared_type='void*' type='^v' const='true'/>
+</function>
+<function name='zbar_image_get_data_length'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='img' const='true'/>
+<retval declared_type='unsigned long' type='L'/>
+</function>
+<function name='zbar_image_get_format'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image' const='true'/>
+<retval declared_type='unsigned long' type='L'/>
+</function>
+<function name='zbar_image_get_height'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image' const='true'/>
+<retval declared_type='unsigned int' type='I'/>
+</function>
+<function name='zbar_image_get_sequence'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image' const='true'/>
+<retval declared_type='unsigned int' type='I'/>
+</function>
+<function name='zbar_image_get_size'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image' const='true'/>
+<arg declared_type='unsigned int*' type='^I' name='width'/>
+<arg declared_type='unsigned int*' type='^I' name='height'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_image_get_symbols'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image' const='true'/>
+<retval declared_type='zbar_symbol_set_t*' type='^{zbar_symbol_set_s=}' const='true'/>
+</function>
+<function name='zbar_image_get_userdata'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image' const='true'/>
+<retval declared_type='void*' type='^v'/>
+</function>
+<function name='zbar_image_get_width'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image' const='true'/>
+<retval declared_type='unsigned int' type='I'/>
+</function>
+<function name='zbar_image_read'>
+<arg declared_type='char*' type='*' name='filename'/>
+<retval declared_type='zbar_image_t*' type='^{zbar_image_s=}'/>
+</function>
+<function name='zbar_image_ref'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image'/>
+<arg declared_type='int' type='i' name='refs'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_image_scanner_create'>
+<retval declared_type='zbar_image_scanner_t*' type='^{zbar_image_scanner_s=}'/>
+</function>
+<function name='zbar_image_scanner_destroy'>
+<arg declared_type='zbar_image_scanner_t*' type='^{zbar_image_scanner_s=}' name='scanner'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_image_scanner_enable_cache'>
+<arg declared_type='zbar_image_scanner_t*' type='^{zbar_image_scanner_s=}' name='scanner'/>
+<arg declared_type='int' type='i' name='enable'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_image_scanner_get_results'>
+<arg declared_type='zbar_image_scanner_t*' type='^{zbar_image_scanner_s=}' name='scanner' const='true'/>
+<retval declared_type='zbar_symbol_set_t*' type='^{zbar_symbol_set_s=}' const='true'/>
+</function>
+<function inline='true' name='zbar_image_scanner_parse_config'>
+<arg declared_type='zbar_image_scanner_t*' type='^{zbar_image_scanner_s=}' name='scanner'/>
+<arg declared_type='char*' type='*' name='config_string' const='true'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_image_scanner_recycle_image'>
+<arg declared_type='zbar_image_scanner_t*' type='^{zbar_image_scanner_s=}' name='scanner'/>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_image_scanner_set_config'>
+<arg declared_type='zbar_image_scanner_t*' type='^{zbar_image_scanner_s=}' name='scanner'/>
+<arg declared_type='zbar_symbol_type_t' type='i' name='symbology'/>
+<arg declared_type='zbar_config_t' type='i' name='config'/>
+<arg declared_type='int' type='i' name='value'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_image_scanner_set_data_handler'>
+<arg declared_type='zbar_image_scanner_t*' type='^{zbar_image_scanner_s=}' name='scanner'/>
+<arg declared_type='zbar_image_data_handler_t*' type='^?' name='handler' function_pointer='true'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}'/>
+<arg declared_type='void*' type='^v' const='true'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void*' type='^v' name='userdata' const='true'/>
+<retval declared_type='zbar_image_data_handler_t*' type='^?' function_pointer='true'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}'/>
+<arg declared_type='void*' type='^v' const='true'/>
+<retval declared_type='void' type='v'/>
+</retval>
+</function>
+<function name='zbar_image_set_crop'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image'/>
+<arg declared_type='unsigned int' type='I' name='x'/>
+<arg declared_type='unsigned int' type='I' name='y'/>
+<arg declared_type='unsigned int' type='I' name='width'/>
+<arg declared_type='unsigned int' type='I' name='height'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_image_set_data'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image'/>
+<arg declared_type='void*' type='^v' name='data' const='true'/>
+<arg declared_type='unsigned long' type='L' name='data_byte_length'/>
+<arg declared_type='zbar_image_cleanup_handler_t*' type='^?' name='cleanup_hndlr' function_pointer='true'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_image_set_format'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image'/>
+<arg declared_type='unsigned long' type='L' name='format'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_image_set_sequence'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image'/>
+<arg declared_type='unsigned int' type='I' name='sequence_num'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_image_set_size'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image'/>
+<arg declared_type='unsigned int' type='I' name='width'/>
+<arg declared_type='unsigned int' type='I' name='height'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_image_set_symbols'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image'/>
+<arg declared_type='zbar_symbol_set_t*' type='^{zbar_symbol_set_s=}' name='symbols' const='true'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_image_set_userdata'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image'/>
+<arg declared_type='void*' type='^v' name='userdata'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_image_write'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image' const='true'/>
+<arg declared_type='char*' type='*' name='filebase' const='true'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_increase_verbosity'>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_negotiate_format'>
+<arg declared_type='zbar_video_t*' type='^{zbar_video_s=}' name='video'/>
+<arg declared_type='zbar_window_t*' type='^{zbar_window_s=}' name='window'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_parse_config'>
+<arg declared_type='char*' type='*' name='config_string' const='true'/>
+<arg declared_type='zbar_symbol_type_t*' type='^i' name='symbology'/>
+<arg declared_type='zbar_config_t*' type='^i' name='config'/>
+<arg declared_type='int*' type='^i' name='value'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_process_image'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor'/>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_process_one'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor'/>
+<arg declared_type='int' type='i' name='timeout'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_processor_create'>
+<arg declared_type='int' type='i' name='threaded'/>
+<retval declared_type='zbar_processor_t*' type='^{zbar_processor_s=}'/>
+</function>
+<function name='zbar_processor_destroy'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function inline='true' name='zbar_processor_error_spew'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor' const='true'/>
+<arg declared_type='int' type='i' name='verbosity'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function inline='true' name='zbar_processor_error_string'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor' const='true'/>
+<arg declared_type='int' type='i' name='verbosity'/>
+<retval declared_type='char*' type='*' const='true'/>
+</function>
+<function name='zbar_processor_force_format'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor'/>
+<arg declared_type='unsigned long' type='L' name='input_format'/>
+<arg declared_type='unsigned long' type='L' name='output_format'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function inline='true' name='zbar_processor_get_error_code'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor' const='true'/>
+<retval declared_type='zbar_error_t' type='i'/>
+</function>
+<function name='zbar_processor_get_results'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor' const='true'/>
+<retval declared_type='zbar_symbol_set_t*' type='^{zbar_symbol_set_s=}' const='true'/>
+</function>
+<function name='zbar_processor_get_userdata'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor' const='true'/>
+<retval declared_type='void*' type='^v'/>
+</function>
+<function name='zbar_processor_init'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor'/>
+<arg declared_type='char*' type='*' name='video_device' const='true'/>
+<arg declared_type='int' type='i' name='enable_display'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_processor_is_visible'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function inline='true' name='zbar_processor_parse_config'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor'/>
+<arg declared_type='char*' type='*' name='config_string' const='true'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_processor_request_interface'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor'/>
+<arg declared_type='int' type='i' name='version'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_processor_request_iomode'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='video'/>
+<arg declared_type='int' type='i' name='iomode'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_processor_request_size'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor'/>
+<arg declared_type='unsigned int' type='I' name='width'/>
+<arg declared_type='unsigned int' type='I' name='height'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_processor_set_active'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor'/>
+<arg declared_type='int' type='i' name='active'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_processor_set_config'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor'/>
+<arg declared_type='zbar_symbol_type_t' type='i' name='symbology'/>
+<arg declared_type='zbar_config_t' type='i' name='config'/>
+<arg declared_type='int' type='i' name='value'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_processor_set_data_handler'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor'/>
+<arg declared_type='zbar_image_data_handler_t*' type='^?' name='handler' function_pointer='true'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}'/>
+<arg declared_type='void*' type='^v' const='true'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void*' type='^v' name='userdata' const='true'/>
+<retval declared_type='zbar_image_data_handler_t*' type='^?' function_pointer='true'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}'/>
+<arg declared_type='void*' type='^v' const='true'/>
+<retval declared_type='void' type='v'/>
+</retval>
+</function>
+<function name='zbar_processor_set_userdata'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor'/>
+<arg declared_type='void*' type='^v' name='userdata'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_processor_set_visible'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor'/>
+<arg declared_type='int' type='i' name='visible'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_processor_user_wait'>
+<arg declared_type='zbar_processor_t*' type='^{zbar_processor_s=}' name='processor'/>
+<arg declared_type='int' type='i' name='timeout'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_scan_image'>
+<arg declared_type='zbar_image_scanner_t*' type='^{zbar_image_scanner_s=}' name='scanner'/>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function inline='true' name='zbar_scan_rgb24'>
+<arg declared_type='zbar_scanner_t*' type='^{zbar_scanner_s=}' name='scanner'/>
+<arg declared_type='unsigned char*' type='*' name='rgb'/>
+<retval declared_type='zbar_symbol_type_t' type='i'/>
+</function>
+<function name='zbar_scan_y'>
+<arg declared_type='zbar_scanner_t*' type='^{zbar_scanner_s=}' name='scanner'/>
+<arg declared_type='int' type='i' name='y'/>
+<retval declared_type='zbar_symbol_type_t' type='i'/>
+</function>
+<function name='zbar_scanner_create'>
+<arg declared_type='zbar_decoder_t*' type='^{zbar_decoder_s=}' name='decoder'/>
+<retval declared_type='zbar_scanner_t*' type='^{zbar_scanner_s=}'/>
+</function>
+<function name='zbar_scanner_destroy'>
+<arg declared_type='zbar_scanner_t*' type='^{zbar_scanner_s=}' name='scanner'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_scanner_flush'>
+<arg declared_type='zbar_scanner_t*' type='^{zbar_scanner_s=}' name='scanner'/>
+<retval declared_type='zbar_symbol_type_t' type='i'/>
+</function>
+<function name='zbar_scanner_get_color'>
+<arg declared_type='zbar_scanner_t*' type='^{zbar_scanner_s=}' name='scanner' const='true'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_scanner_get_edge'>
+<arg declared_type='zbar_scanner_t*' type='^{zbar_scanner_s=}' name='scn' const='true'/>
+<arg declared_type='unsigned int' type='I' name='offset'/>
+<arg declared_type='int' type='i' name='prec'/>
+<retval declared_type='unsigned int' type='I'/>
+</function>
+<function name='zbar_scanner_get_width'>
+<arg declared_type='zbar_scanner_t*' type='^{zbar_scanner_s=}' name='scanner' const='true'/>
+<retval declared_type='unsigned int' type='I'/>
+</function>
+<function name='zbar_scanner_new_scan'>
+<arg declared_type='zbar_scanner_t*' type='^{zbar_scanner_s=}' name='scanner'/>
+<retval declared_type='zbar_symbol_type_t' type='i'/>
+</function>
+<function name='zbar_scanner_reset'>
+<arg declared_type='zbar_scanner_t*' type='^{zbar_scanner_s=}' name='scanner'/>
+<retval declared_type='zbar_symbol_type_t' type='i'/>
+</function>
+<function name='zbar_set_verbosity'>
+<arg declared_type='int' type='i' name='verbosity'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_symbol_first_component'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<retval declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' const='true'/>
+</function>
+<function name='zbar_symbol_get_components'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<retval declared_type='zbar_symbol_set_t*' type='^{zbar_symbol_set_s=}' const='true'/>
+</function>
+<function name='zbar_symbol_get_configs'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<retval declared_type='unsigned int' type='I'/>
+</function>
+<function name='zbar_symbol_get_count'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_symbol_get_data'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<retval declared_type='char*' type='*' const='true'/>
+</function>
+<function name='zbar_symbol_get_data_length'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<retval declared_type='unsigned int' type='I'/>
+</function>
+<function name='zbar_symbol_get_loc_size'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<retval declared_type='unsigned int' type='I'/>
+</function>
+<function name='zbar_symbol_get_loc_x'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<arg declared_type='unsigned int' type='I' name='index'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_symbol_get_loc_y'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<arg declared_type='unsigned int' type='I' name='index'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_symbol_get_modifiers'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<retval declared_type='unsigned int' type='I'/>
+</function>
+<function name='zbar_symbol_get_orientation'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<retval declared_type='zbar_orientation_t' type='i'/>
+</function>
+<function name='zbar_symbol_get_quality'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_symbol_get_type'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<retval declared_type='zbar_symbol_type_t' type='i'/>
+</function>
+<function name='zbar_symbol_next'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<retval declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' const='true'/>
+</function>
+<function name='zbar_symbol_ref'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<arg declared_type='int' type='i' name='refs'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_symbol_set_first_symbol'>
+<arg declared_type='zbar_symbol_set_t*' type='^{zbar_symbol_set_s=}' name='symbols' const='true'/>
+<retval declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' const='true'/>
+</function>
+<function name='zbar_symbol_set_first_unfiltered'>
+<arg declared_type='zbar_symbol_set_t*' type='^{zbar_symbol_set_s=}' name='symbols' const='true'/>
+<retval declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' const='true'/>
+</function>
+<function name='zbar_symbol_set_get_size'>
+<arg declared_type='zbar_symbol_set_t*' type='^{zbar_symbol_set_s=}' name='symbols' const='true'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_symbol_set_ref'>
+<arg declared_type='zbar_symbol_set_t*' type='^{zbar_symbol_set_s=}' name='symbols' const='true'/>
+<arg declared_type='int' type='i' name='refs'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_symbol_xml'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true'/>
+<arg declared_type='char**' type='^*' name='buffer'/>
+<arg declared_type='unsigned int*' type='^I' name='buflen'/>
+<retval declared_type='char*' type='*'/>
+</function>
+<function name='zbar_version'>
+<arg declared_type='unsigned int*' type='^I' name='major'/>
+<arg declared_type='unsigned int*' type='^I' name='minor'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_video_create'>
+<retval declared_type='zbar_video_t*' type='^{zbar_video_s=}'/>
+</function>
+<function name='zbar_video_destroy'>
+<arg declared_type='zbar_video_t*' type='^{zbar_video_s=}' name='video'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_video_enable'>
+<arg declared_type='zbar_video_t*' type='^{zbar_video_s=}' name='video'/>
+<arg declared_type='int' type='i' name='enable'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function inline='true' name='zbar_video_error_spew'>
+<arg declared_type='zbar_video_t*' type='^{zbar_video_s=}' name='video' const='true'/>
+<arg declared_type='int' type='i' name='verbosity'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function inline='true' name='zbar_video_error_string'>
+<arg declared_type='zbar_video_t*' type='^{zbar_video_s=}' name='video' const='true'/>
+<arg declared_type='int' type='i' name='verbosity'/>
+<retval declared_type='char*' type='*' const='true'/>
+</function>
+<function inline='true' name='zbar_video_get_error_code'>
+<arg declared_type='zbar_video_t*' type='^{zbar_video_s=}' name='video' const='true'/>
+<retval declared_type='zbar_error_t' type='i'/>
+</function>
+<function name='zbar_video_get_fd'>
+<arg declared_type='zbar_video_t*' type='^{zbar_video_s=}' name='video' const='true'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_video_get_height'>
+<arg declared_type='zbar_video_t*' type='^{zbar_video_s=}' name='video' const='true'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_video_get_width'>
+<arg declared_type='zbar_video_t*' type='^{zbar_video_s=}' name='video' const='true'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_video_init'>
+<arg declared_type='zbar_video_t*' type='^{zbar_video_s=}' name='video'/>
+<arg declared_type='unsigned long' type='L' name='format'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_video_next_image'>
+<arg declared_type='zbar_video_t*' type='^{zbar_video_s=}' name='video'/>
+<retval declared_type='zbar_image_t*' type='^{zbar_image_s=}'/>
+</function>
+<function name='zbar_video_open'>
+<arg declared_type='zbar_video_t*' type='^{zbar_video_s=}' name='video'/>
+<arg declared_type='char*' type='*' name='device' const='true'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_video_request_interface'>
+<arg declared_type='zbar_video_t*' type='^{zbar_video_s=}' name='video'/>
+<arg declared_type='int' type='i' name='version'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_video_request_iomode'>
+<arg declared_type='zbar_video_t*' type='^{zbar_video_s=}' name='video'/>
+<arg declared_type='int' type='i' name='iomode'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_video_request_size'>
+<arg declared_type='zbar_video_t*' type='^{zbar_video_s=}' name='video'/>
+<arg declared_type='unsigned int' type='I' name='width'/>
+<arg declared_type='unsigned int' type='I' name='height'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_window_attach'>
+<arg declared_type='zbar_window_t*' type='^{zbar_window_s=}' name='window'/>
+<arg declared_type='void*' type='^v' name='x11_display_w32_hwnd'/>
+<arg declared_type='unsigned long' type='L' name='x11_drawable'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_window_create'>
+<retval declared_type='zbar_window_t*' type='^{zbar_window_s=}'/>
+</function>
+<function name='zbar_window_destroy'>
+<arg declared_type='zbar_window_t*' type='^{zbar_window_s=}' name='window'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='zbar_window_draw'>
+<arg declared_type='zbar_window_t*' type='^{zbar_window_s=}' name='window'/>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function inline='true' name='zbar_window_error_spew'>
+<arg declared_type='zbar_window_t*' type='^{zbar_window_s=}' name='window' const='true'/>
+<arg declared_type='int' type='i' name='verbosity'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function inline='true' name='zbar_window_error_string'>
+<arg declared_type='zbar_window_t*' type='^{zbar_window_s=}' name='window' const='true'/>
+<arg declared_type='int' type='i' name='verbosity'/>
+<retval declared_type='char*' type='*' const='true'/>
+</function>
+<function inline='true' name='zbar_window_get_error_code'>
+<arg declared_type='zbar_window_t*' type='^{zbar_window_s=}' name='window' const='true'/>
+<retval declared_type='zbar_error_t' type='i'/>
+</function>
+<function name='zbar_window_get_overlay'>
+<arg declared_type='zbar_window_t*' type='^{zbar_window_s=}' name='window' const='true'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_window_redraw'>
+<arg declared_type='zbar_window_t*' type='^{zbar_window_s=}' name='window'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_window_resize'>
+<arg declared_type='zbar_window_t*' type='^{zbar_window_s=}' name='window'/>
+<arg declared_type='unsigned int' type='I' name='width'/>
+<arg declared_type='unsigned int' type='I' name='height'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='zbar_window_set_overlay'>
+<arg declared_type='zbar_window_t*' type='^{zbar_window_s=}' name='window'/>
+<arg declared_type='int' type='i' name='level'/>
+<retval declared_type='void' type='v'/>
+</function>
+<class name='NSObject'>
+<method selector='captureReader:didReadNewSymbolsFromImage:'>
+<arg declared_type='ZBarCaptureReader*' type='@' name='captureReader' index='0'/>
+<arg declared_type='ZBarImage*' type='@' name='image' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='captureReader:didTrackSymbols:'>
+<arg declared_type='ZBarCaptureReader*' type='@' name='captureReader' index='0'/>
+<arg declared_type='ZBarSymbolSet*' type='@' name='symbols' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='helpControllerDidFinish:'>
+<arg declared_type='ZBarHelpController*' type='@' name='help' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='readerControllerDidFailToRead:withRetry:'>
+<arg declared_type='ZBarReaderController*' type='@' name='reader' index='0'/>
+<arg declared_type='BOOL' type='B' name='retry' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='readerView:didReadSymbols:fromImage:'>
+<arg declared_type='ZBarReaderView*' type='@' name='readerView' index='0'/>
+<arg declared_type='ZBarSymbolSet*' type='@' name='symbols' index='1'/>
+<arg declared_type='UIImage*' type='@' name='image' index='2'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='ZBarCameraSimulator'>
+<method selector='initWithViewController:'>
+<arg declared_type='id' type='@' name='viewController' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='readerView'>
+<retval declared_type='ZBarReaderView*' type='@'/>
+</method>
+<method selector='setReaderView:'>
+<arg declared_type='ZBarReaderView*' type='@' name='readerView' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='takePicture'>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='ZBarCaptureReader'>
+<method selector='captureDelegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='captureFrame'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='captureOutput'>
+<retval declared_type='AVCaptureOutput*' type='@'/>
+</method>
+<method selector='enableCache'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='enableReader'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='flushCache'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='framesPerSecond'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='initWithImageScanner:'>
+<arg declared_type='ZBarImageScanner*' type='@' name='imageScanner' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='scanCrop'>
+<retval declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+</method>
+<method selector='scanner'>
+<retval declared_type='ZBarImageScanner*' type='@'/>
+</method>
+<method selector='setCaptureDelegate:'>
+<arg declared_type='id' type='@' name='captureDelegate' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setEnableCache:'>
+<arg declared_type='BOOL' type='B' name='enableCache' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setEnableReader:'>
+<arg declared_type='BOOL' type='B' name='enableReader' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setScanCrop:'>
+<arg declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}' name='scanCrop' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='size'>
+<retval declared_type='CGSize' type='{CGSize=ff}'/>
+</method>
+<method selector='willStartRunning'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='willStopRunning'>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='ZBarHelpController'>
+<method selector='delegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithReason:'>
+<arg declared_type='NSString*' type='@' name='reason' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='isInterfaceOrientationSupported:'>
+<arg declared_type='UIInterfaceOrientation' type='i' name='orientation' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='setDelegate:'>
+<arg declared_type='id' type='@' name='delegate' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setInterfaceOrientation:supported:'>
+<arg declared_type='UIInterfaceOrientation' type='i' name='orientation' index='0'/>
+<arg declared_type='BOOL' type='B' name='supported' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='ZBarImage'>
+<method selector='UIImage'>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+<method selector='UIImageWithOrientation:'>
+<arg declared_type='UIImageOrientation' type='i' name='imageOrientation' index='0'/>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+<method selector='cleanup'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='crop'>
+<retval declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+</method>
+<method selector='data'>
+<retval declared_type='void*' type='^v' const='true'/>
+</method>
+<method selector='dataLength'>
+<retval declared_type='unsigned long' type='L'/>
+</method>
+<method selector='format'>
+<retval declared_type='unsigned long' type='L'/>
+</method>
+<method class_method='true' selector='fourcc:'>
+<arg declared_type='NSString*' type='@' name='format' index='0'/>
+<retval declared_type='unsigned long' type='L'/>
+</method>
+<method selector='initWithCGImage:'>
+<arg declared_type='CGImageRef' type='^{CGImage=}' name='image' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithCGImage:crop:size:'>
+<arg declared_type='CGImageRef' type='^{CGImage=}' name='image' index='0'/>
+<arg declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}' name='crop' index='1'/>
+<arg declared_type='CGSize' type='{CGSize=ff}' name='size' index='2'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithCGImage:size:'>
+<arg declared_type='CGImageRef' type='^{CGImage=}' name='image' index='0'/>
+<arg declared_type='CGSize' type='{CGSize=ff}' name='size' index='1'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithImage:'>
+<arg declared_type='zbar_image_t*' type='^{zbar_image_s=}' name='image' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='sequence'>
+<retval declared_type='unsigned int' type='I'/>
+</method>
+<method selector='setCrop:'>
+<arg declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}' name='crop' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setData:withLength:'>
+<arg declared_type='void*' type='^v' name='data' const='true' index='0'/>
+<arg declared_type='unsigned long' type='L' name='length' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFormat:'>
+<arg declared_type='unsigned long' type='L' name='format' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSequence:'>
+<arg declared_type='unsigned int' type='I' name='sequence' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSize:'>
+<arg declared_type='CGSize' type='{CGSize=ff}' name='size' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSymbols:'>
+<arg declared_type='ZBarSymbolSet*' type='@' name='symbols' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='size'>
+<retval declared_type='CGSize' type='{CGSize=ff}'/>
+</method>
+<method selector='symbols'>
+<retval declared_type='ZBarSymbolSet*' type='@'/>
+</method>
+<method selector='zbarImage'>
+<retval declared_type='zbar_image_t*' type='^{zbar_image_s=}'/>
+</method>
+</class>
+<class name='ZBarImageScanner'>
+<method selector='enableCache'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='parseConfig:'>
+<arg declared_type='NSString*' type='@' name='configStr' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='results'>
+<retval declared_type='ZBarSymbolSet*' type='@'/>
+</method>
+<method selector='scanImage:'>
+<arg declared_type='ZBarImage*' type='@' name='image' index='0'/>
+<retval declared_type='NSInteger' type='i'/>
+</method>
+<method selector='setEnableCache:'>
+<arg declared_type='BOOL' type='B' name='enableCache' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSymbology:config:to:'>
+<arg declared_type='zbar_symbol_type_t' type='i' name='symbology' index='0'/>
+<arg declared_type='zbar_config_t' type='i' name='config' index='1'/>
+<arg declared_type='int' type='i' name='value' index='2'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='ZBarReaderController'>
+<method selector='cameraMode'>
+<retval declared_type='ZBarReaderControllerCameraMode' type='i'/>
+</method>
+<method selector='enableCache'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='maxScanDimension'>
+<retval declared_type='NSInteger' type='i'/>
+</method>
+<method selector='readerDelegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='scanCrop'>
+<retval declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+</method>
+<method selector='scanImage:'>
+<arg declared_type='CGImageRef' type='^{CGImage=}' name='image' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='scanner'>
+<retval declared_type='ZBarImageScanner*' type='@'/>
+</method>
+<method selector='setCameraMode:'>
+<arg declared_type='ZBarReaderControllerCameraMode' type='i' name='cameraMode' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setEnableCache:'>
+<arg declared_type='BOOL' type='B' name='enableCache' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMaxScanDimension:'>
+<arg declared_type='NSInteger' type='i' name='maxScanDimension' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setReaderDelegate:'>
+<arg declared_type='id' type='@' name='readerDelegate' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setScanCrop:'>
+<arg declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}' name='scanCrop' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShowsHelpOnFail:'>
+<arg declared_type='BOOL' type='B' name='showsHelpOnFail' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShowsZBarControls:'>
+<arg declared_type='BOOL' type='B' name='showsZBarControls' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTakesPicture:'>
+<arg declared_type='BOOL' type='B' name='takesPicture' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTracksSymbols:'>
+<arg declared_type='BOOL' type='B' name='tracksSymbols' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='showHelpWithReason:'>
+<arg declared_type='NSString*' type='@' name='reason' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='showsHelpOnFail'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='showsZBarControls'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='takesPicture'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='tracksSymbols'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='ZBarReaderView'>
+<method selector='allowsPinchZoom'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='captureReader'>
+<retval declared_type='ZBarCaptureReader*' type='@'/>
+</method>
+<method selector='device'>
+<retval declared_type='AVCaptureDevice*' type='@'/>
+</method>
+<method selector='enableCache'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='flushCache'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='initWithImageScanner:'>
+<arg declared_type='ZBarImageScanner*' type='@' name='imageScanner' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='maxZoom'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='previewTransform'>
+<retval declared_type='CGAffineTransform' type='{CGAffineTransform=ffffff}'/>
+</method>
+<method selector='readerDelegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='scanCrop'>
+<retval declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+</method>
+<method selector='scanner'>
+<retval declared_type='ZBarImageScanner*' type='@'/>
+</method>
+<method selector='session'>
+<retval declared_type='AVCaptureSession*' type='@'/>
+</method>
+<method selector='setAllowsPinchZoom:'>
+<arg declared_type='BOOL' type='B' name='allowsPinchZoom' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDevice:'>
+<arg declared_type='AVCaptureDevice*' type='@' name='device' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setEnableCache:'>
+<arg declared_type='BOOL' type='B' name='enableCache' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMaxZoom:'>
+<arg declared_type='CGFloat' type='f' name='maxZoom' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPreviewTransform:'>
+<arg declared_type='CGAffineTransform' type='{CGAffineTransform=ffffff}' name='previewTransform' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setReaderDelegate:'>
+<arg declared_type='id' type='@' name='readerDelegate' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setScanCrop:'>
+<arg declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}' name='scanCrop' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShowsFPS:'>
+<arg declared_type='BOOL' type='B' name='showsFPS' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTorchMode:'>
+<arg declared_type='NSInteger' type='i' name='torchMode' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTrackingColor:'>
+<arg declared_type='UIColor*' type='@' name='trackingColor' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTracksSymbols:'>
+<arg declared_type='BOOL' type='B' name='tracksSymbols' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setZoom:'>
+<arg declared_type='CGFloat' type='f' name='zoom' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setZoom:animated:'>
+<arg declared_type='CGFloat' type='f' name='zoom' index='0'/>
+<arg declared_type='BOOL' type='B' name='animated' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='showsFPS'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='start'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='stop'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='torchMode'>
+<retval declared_type='NSInteger' type='i'/>
+</method>
+<method selector='trackingColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='tracksSymbols'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='willRotateToInterfaceOrientation:duration:'>
+<arg declared_type='UIInterfaceOrientation' type='i' name='orient' index='0'/>
+<arg declared_type='NSTimeInterval' type='d' name='duration' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='zoom'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+</class>
+<class name='ZBarReaderViewController'>
+<method selector='allowsEditing'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='allowsImageEditing'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method class_method='true' selector='availableCaptureModesForCameraDevice:'>
+<arg declared_type='UIImagePickerControllerCameraDevice' type='I' name='cameraDevice' index='0'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='cameraCaptureMode'>
+<retval declared_type='UIImagePickerControllerCameraCaptureMode' type='I'/>
+</method>
+<method selector='cameraDevice'>
+<retval declared_type='UIImagePickerControllerCameraDevice' type='I'/>
+</method>
+<method selector='cameraFlashMode'>
+<retval declared_type='UIImagePickerControllerCameraFlashMode' type='i'/>
+</method>
+<method selector='cameraMode'>
+<retval declared_type='ZBarReaderControllerCameraMode' type='i'/>
+</method>
+<method selector='cameraOverlayView'>
+<retval declared_type='UIView*' type='@'/>
+</method>
+<method selector='cameraViewTransform'>
+<retval declared_type='CGAffineTransform' type='{CGAffineTransform=ffffff}'/>
+</method>
+<method selector='enableCache'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method class_method='true' selector='isCameraDeviceAvailable:'>
+<arg declared_type='UIImagePickerControllerCameraDevice' type='I' name='cameraDevice' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method class_method='true' selector='isFlashAvailableForCameraDevice:'>
+<arg declared_type='UIImagePickerControllerCameraDevice' type='I' name='cameraDevice' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method class_method='true' selector='isSourceTypeAvailable:'>
+<arg declared_type='UIImagePickerControllerSourceType' type='I' name='sourceType' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='maxScanDimension'>
+<retval declared_type='NSInteger' type='i'/>
+</method>
+<method selector='readerDelegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='readerView'>
+<retval declared_type='ZBarReaderView*' type='@'/>
+</method>
+<method selector='scanCrop'>
+<retval declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+</method>
+<method selector='scanner'>
+<retval declared_type='ZBarImageScanner*' type='@'/>
+</method>
+<method selector='setAllowsEditing:'>
+<arg declared_type='BOOL' type='B' name='allowsEditing' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAllowsImageEditing:'>
+<arg declared_type='BOOL' type='B' name='allowsImageEditing' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCameraCaptureMode:'>
+<arg declared_type='UIImagePickerControllerCameraCaptureMode' type='I' name='cameraCaptureMode' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCameraDevice:'>
+<arg declared_type='UIImagePickerControllerCameraDevice' type='I' name='cameraDevice' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCameraFlashMode:'>
+<arg declared_type='UIImagePickerControllerCameraFlashMode' type='i' name='cameraFlashMode' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCameraMode:'>
+<arg declared_type='ZBarReaderControllerCameraMode' type='i' name='cameraMode' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCameraOverlayView:'>
+<arg declared_type='UIView*' type='@' name='cameraOverlayView' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCameraViewTransform:'>
+<arg declared_type='CGAffineTransform' type='{CGAffineTransform=ffffff}' name='cameraViewTransform' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setEnableCache:'>
+<arg declared_type='BOOL' type='B' name='enableCache' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMaxScanDimension:'>
+<arg declared_type='NSInteger' type='i' name='maxScanDimension' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setReaderDelegate:'>
+<arg declared_type='id' type='@' name='readerDelegate' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setScanCrop:'>
+<arg declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}' name='scanCrop' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShowsCameraControls:'>
+<arg declared_type='BOOL' type='B' name='showsCameraControls' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShowsHelpOnFail:'>
+<arg declared_type='BOOL' type='B' name='showsHelpOnFail' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShowsZBarControls:'>
+<arg declared_type='BOOL' type='B' name='showsZBarControls' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSourceType:'>
+<arg declared_type='UIImagePickerControllerSourceType' type='I' name='sourceType' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSupportedOrientationsMask:'>
+<arg declared_type='NSUInteger' type='I' name='supportedOrientationsMask' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTakesPicture:'>
+<arg declared_type='BOOL' type='B' name='takesPicture' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTracksSymbols:'>
+<arg declared_type='BOOL' type='B' name='tracksSymbols' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setVideoQuality:'>
+<arg declared_type='UIImagePickerControllerQualityType' type='I' name='videoQuality' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='showHelpWithReason:'>
+<arg declared_type='NSString*' type='@' name='reason' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='showsCameraControls'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='showsHelpOnFail'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='showsZBarControls'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='sourceType'>
+<retval declared_type='UIImagePickerControllerSourceType' type='I'/>
+</method>
+<method selector='supportedOrientationsMask'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='takePicture'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='takesPicture'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='tracksSymbols'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='videoQuality'>
+<retval declared_type='UIImagePickerControllerQualityType' type='I'/>
+</method>
+</class>
+<class name='ZBarSymbol'>
+<method selector='bounds'>
+<retval declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+</method>
+<method selector='components'>
+<retval declared_type='ZBarSymbolSet*' type='@'/>
+</method>
+<method selector='configMask'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='count'>
+<retval declared_type='int' type='i'/>
+</method>
+<method selector='data'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='initWithSymbol:'>
+<arg declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' name='symbol' const='true' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='modifierMask'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method class_method='true' selector='nameForType:'>
+<arg declared_type='zbar_symbol_type_t' type='i' name='type' index='0'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='orientation'>
+<retval declared_type='zbar_orientation_t' type='i'/>
+</method>
+<method selector='quality'>
+<retval declared_type='int' type='i'/>
+</method>
+<method selector='type'>
+<retval declared_type='zbar_symbol_type_t' type='i'/>
+</method>
+<method selector='typeName'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='zbarSymbol'>
+<retval declared_type='zbar_symbol_t*' type='^{zbar_symbol_s=}' const='true'/>
+</method>
+</class>
+<class name='ZBarSymbolSet'>
+<method selector='count'>
+<retval declared_type='int' type='i'/>
+</method>
+<method selector='filterSymbols'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='initWithSymbolSet:'>
+<arg declared_type='zbar_symbol_set_t*' type='^{zbar_symbol_set_s=}' name='set' const='true' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setFilterSymbols:'>
+<arg declared_type='BOOL' type='B' name='filterSymbols' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='zbarSymbolSet'>
+<retval declared_type='zbar_symbol_set_t*' type='^{zbar_symbol_set_s=}' const='true'/>
+</method>
+</class>
+<informal_protocol name='ZBarCaptureDelegate'>
+<method type='v16@0:4@8@12' selector='captureReader:didReadNewSymbolsFromImage:'>
+<arg declared_type='ZBarCaptureReader*' type='@' name='captureReader' index='0'/>
+<arg declared_type='ZBarImage*' type='@' name='image' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v16@0:4@8@12' selector='captureReader:didTrackSymbols:'>
+<arg declared_type='ZBarCaptureReader*' type='@' name='captureReader' index='0'/>
+<arg declared_type='ZBarSymbolSet*' type='@' name='symbols' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='ZBarHelpDelegate'>
+<method type='v12@0:4@8' selector='helpControllerDidFinish:'>
+<arg declared_type='ZBarHelpController*' type='@' name='help' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='ZBarReaderDelegate'>
+<method type='v16@0:4@8B12' selector='readerControllerDidFailToRead:withRetry:'>
+<arg declared_type='ZBarReaderController*' type='@' name='reader' index='0'/>
+<arg declared_type='BOOL' type='B' name='retry' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='ZBarReaderViewDelegate'>
+<method type='v20@0:4@8@12@16' selector='readerView:didReadSymbols:fromImage:'>
+<arg declared_type='ZBarReaderView*' type='@' name='readerView' index='0'/>
+<arg declared_type='ZBarSymbolSet*' type='@' name='symbols' index='1'/>
+<arg declared_type='UIImage*' type='@' name='image' index='2'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+</signatures>
