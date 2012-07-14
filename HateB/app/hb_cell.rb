@@ -11,44 +11,44 @@ class HBCell < UITableViewCell
   attr_accessor :avator
 
   def initCell(tableView)
-    cell = tableView.dequeueReusableCellWithIdentifier(CELL_ID)
-    return cell if cell
+    @cell = tableView.dequeueReusableCellWithIdentifier(CELL_ID)
+    return @cell if @cell
 
-    cell = self.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier: CELL_ID)
-    cell.contentView.subviews.each do |v|
+    @cell = self.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier: CELL_ID)
+    @cell.contentView.subviews.each do |v|
       v.removeFromSuperview
     end
     @width = tableView.frame.size.width
 
     @avator = UIImageView.alloc.initWithFrame([[2, 2], [46, 46]])
-    cell.contentView.addSubview(@avator)
+    @cell.contentView.addSubview(@avator)
 
     @name = UILabel.alloc.initWithFrame([[55, 0], [110, 18]])
     @name.font = UIFont.boldSystemFontOfSize(MESSAGE_FONT_SIZE)
-    cell.contentView.addSubview(@name)
+    @cell.contentView.addSubview(@name)
 
     @date = UILabel.alloc.initWithFrame([[250, 0], [@width - 250, 18]])
     @date.font = UIFont.systemFontOfSize(MESSAGE_FONT_SIZE)
-    cell.contentView.addSubview(@date)
+    @cell.contentView.addSubview(@date)
 
     @count = UILabel.alloc.initWithFrame([[170, 0], [70, 18]])
     @count.font = UIFont.systemFontOfSize(MESSAGE_FONT_SIZE)
     @count.textAlignment = UITextAlignmentRight
     @count.textColor = "#8e3d3d".to_color
-    cell.contentView.addSubview(@count)
+    @cell.contentView.addSubview(@count)
 
     @comment = UILabel.alloc.initWithFrame([[55, 24], [@width - 55, 48]])
     @comment.font = UIFont.systemFontOfSize(MESSAGE_FONT_SIZE)
     @comment.numberOfLines = 0
-    cell.contentView.addSubview(@comment)
+    @cell.contentView.addSubview(@comment)
 
     @title = UILabel.alloc.initWithFrame([[60, 24], [@width - 60, 48]])
     @title.font = UIFont.systemFontOfSize(MESSAGE_FONT_SIZE)
     @title.numberOfLines = 0
     @title.textColor = "#163a82".to_color
-    cell.contentView.addSubview(@title)
+    @cell.contentView.addSubview(@title)
 
-    cell
+    @cell
   end
   
   def initCellWithItem(tableView, rss: rss)

@@ -3,14 +3,14 @@ class LoadCell < UITableViewCell
   attr_reader :imageView
   
   def initCell(tableView)
-    cell = tableView.dequeueReusableCellWithIdentifier(CELL_ID)
-    if cell
-      cell.imageView.startAnimating
-      return cell
+    @cell = tableView.dequeueReusableCellWithIdentifier(CELL_ID)
+    if @cell
+      @cell.imageView.startAnimating
+      return @cell
     end
 
-    cell = self.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier: CELL_ID)
-    cell.contentView.subviews.each do |v|
+    @cell = self.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier: CELL_ID)
+    @cell.contentView.subviews.each do |v|
       v.removeFromSuperview
     end
     
@@ -24,9 +24,9 @@ class LoadCell < UITableViewCell
     @imageView.animationRepeatCount = 0
     @imageView.animationDuration = 4.0
     @imageView.startAnimating
-    cell.contentView.addSubview(@imageView)
+    @cell.contentView.addSubview(@imageView)
 
-    cell
+    @cell
   end
 
   module Cell
