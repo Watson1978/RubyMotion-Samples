@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+$:.unshift("/Library/RubyMotion/lib")
+require 'motion/project'
+
+Motion::Project::App.setup do |app|
+  # Use `rake config' to see complete project settings.
+  app.name = 'HelloGoogleAnalytics'
+  app.vendor_project('vendor/Library',
+    :static, :products => ['libGoogleAnalytics.a'], :headers_dir => '.')
+  app.frameworks += ["CoreData", "SystemConfiguration"]
+end
