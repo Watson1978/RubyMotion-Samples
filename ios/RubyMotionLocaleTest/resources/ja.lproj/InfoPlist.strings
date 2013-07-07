@@ -1,0 +1,3 @@
+/* Localized versions of Info.plist keys */
+CFBundleName = "日本語";
+CFBundleDisplayName = "日本語";
